@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>東京・箱根・橫濱 4 天 3 夜藝文巡禮｜迎賓館赤坂離宮・東京十社古社・箱根 POLA 美術館・橫濱港灣</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #F8F6F1;
+    --bg-card: #FFFFFF;
+    --border-color: #E2DACB;
+    --accent-gold: #A37E3E;
+    --accent-gold-dark: #8A662D;
+    --text-main: #2C2A29;
+    --text-muted: #69645F;
+    --badge-bg: #EEE8DE;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: 'Noto Sans TC', sans-serif;
+    line-height: 1.8;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  header {
+    text-align: center;
+    padding: 40px 0 36px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 44px;
+  }
+
+  .brand-mark {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    margin-bottom: 12px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    color: var(--accent-gold-dark);
+    font-weight: 400;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+  }
+
+  .client-date {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-main);
+    letter-spacing: 1.5px;
+    margin: 48px 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--border-color), transparent);
+  }
+
+  /* Timeline Container */
+  .timeline-container {
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    padding: 8px 24px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  }
+
+  .day-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border-color);
+    align-items: flex-start;
+  }
+
+  .day-row:last-child {
+    border-bottom: none;
+  }
+
+  .day-badge {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .day-num {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    font-family: 'Arial', sans-serif;
+  }
+
+  .day-date {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .day-body ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .day-body li {
+    font-size: 14px;
+    color: var(--text-main);
+    position: relative;
+    padding-left: 16px;
+    line-height: 1.7;
+  }
+
+  .day-body li::before {
+    content: '•';
+    color: var(--accent-gold);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+  }
+
+  /* Experience Cards */
+  .exp-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 36px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    display: grid;
+    grid-template-columns: 320px 1fr;
+  }
+
+  .exp-image-wrap {
+    position: relative;
+    width: 100%;
+    min-height: 280px;
+    overflow: hidden;
+    background: #EDE8DE;
+  }
+
+  .exp-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .exp-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(248, 246, 241, 0.92);
+    backdrop-filter: blur(8px);
+    color: var(--accent-gold-dark);
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+  }
+
+  .exp-content {
+    padding: 28px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .exp-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 18px;
+    line-height: 1.4;
+  }
+
+  .detail-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .detail-item {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .detail-title {
+    color: var(--text-main);
+    font-weight: 600;
+    display: inline;
+  }
+
+  .detail-dot {
+    color: var(--accent-gold);
+    margin-right: 6px;
+  }
+
+  footer {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  /* Responsive for mobile */
+  @media (max-width: 720px) {
+    .container {
+      padding: 24px 16px 60px;
+    }
+    h1 {
+      font-size: 26px;
+    }
+    .day-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 16px 0;
+    }
+    .exp-card {
+      grid-template-columns: 1fr;
+    }
+    .exp-image-wrap {
+      height: 220px;
+      min-height: 220px;
+    }
+    .exp-content {
+      padding: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="brand-mark">FineDayClub</div>
+    <h1>東京・箱根・橫濱 藝文巡禮</h1>
+    <div class="subtitle">迎賓館赤坂離宮・東京十社古社・箱根 POLA 美術館・橫濱港灣</div>
+    <div class="client-date">2026.11.27 – 11.30 ｜ 貴賓：黃讌婷 小姐</div>
+  </header>
+
+  <div class="section-title">四日行程動線</div>
+  
+  <div class="timeline-container">
+    <div class="day-row">
+      <div class="day-badge">
+        <span class="day-num">Day 1</span>
+        <span class="day-date">11/27 (五)</span>
+      </div>
+      <div class="day-body">
+        <ul>
+          <li>搭乘全日空 NH1072 抵達羽田機場，專車接送至飯店入住休憩。</li>
+          <li>傍晚漫步至日枝神社，登稻荷千本鳥居階梯，展開東京十社巡禮。</li>
+          <li>晚間於赤坂享用晚餐。</li>
+          <li>入住 ANA InterContinental Tokyo。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-badge">
+        <span class="day-num">Day 2</span>
+        <span class="day-date">11/28 (六)</span>
+      </div>
+      <div class="day-body">
+        <ul>
+          <li>上午參觀迎賓館赤坂離宮，欣賞新巴洛克宮殿建築、本館大廳與前庭花園。</li>
+          <li>走訪永田町國會大廈，欣賞莊嚴的花崗岩建築外觀。</li>
+          <li>午餐於紀尾井町或赤坂一帶享用。</li>
+          <li>午後漫步神保町古書街，尋訪舊書店與昭和喫茶店。</li>
+          <li>前往江戶總鎮守「神田明神」參拜。</li>
+          <li>傍晚返回赤坂，造訪四百年林蔭古社「赤坂冰川神社」。</li>
+          <li>入住 ANA InterContinental Tokyo。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-badge">
+        <span class="day-num">Day 3</span>
+        <span class="day-date">11/29 (日)</span>
+      </div>
+      <div class="day-body">
+        <ul>
+          <li>上午漫步東京藝術大學上野校區與大學美術館，感受秋日藝術校園。</li>
+          <li>午餐於上野恩賜公園周邊享用。</li>
+          <li>午後走訪根津神社，漫步權現造社殿與乙女稻荷鳥居隧道。</li>
+          <li>參訪煥新的江戶東京博物館，走進江戶市街與東京生活記憶。</li>
+          <li>傍晚返回赤坂享用晚餐。</li>
+          <li>入住 ANA InterContinental Tokyo。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="day-row">
+      <div class="day-badge">
+        <span class="day-num">Day 4</span>
+        <span class="day-date">11/30 (一)</span>
+      </div>
+      <div class="day-body">
+        <ul>
+          <li>上午退房，專車前往箱根。</li>
+          <li>參觀箱根 POLA 美術館，欣賞莫內《睡蓮之池》等印象派真跡。</li>
+          <li>於館內餐廳「Array」享用午餐，眺望山景。</li>
+          <li>午後專車前往橫濱。</li>
+          <li>入住橫濱洲際酒店（InterContinental Yokohama Grand）。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>FineDayClub・專屬訂製旅行</p>
+  </footer>
+</div>
+
+</body>
+</html>
